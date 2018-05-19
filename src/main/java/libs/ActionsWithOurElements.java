@@ -11,12 +11,12 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.List;
 
-public class ActionsWithElements {
+public class ActionsWithOurElements {
     WebDriver webDriver;
     Logger logger;
     WebDriverWait webDriverWait15;
 
-    public ActionsWithElements(WebDriver webDriver) {
+    public ActionsWithOurElements(WebDriver webDriver) {
         this.webDriver = webDriver;
         logger = Logger.getLogger(getClass());
         webDriverWait15 = new WebDriverWait(webDriver,15);
@@ -94,7 +94,6 @@ public class ActionsWithElements {
                 printErrorAndStopTest();
             }
         }
-// Rozshyrennja metoda (prujmae krim webelement i string)
     public boolean isElementPresent(String locator) {
         try {
             WebElement webElement = webDriver.findElement(By.xpath(locator));
