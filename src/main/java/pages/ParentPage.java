@@ -12,7 +12,7 @@ public class ParentPage {
     ActionsWithOurElements actionsWithOurElements;
     WebDriver webDriver;
     String expectedURL;
-    final String baseURL = "https://www.watsons.ua";
+    final String baseURL = "https://zenmoney.ru";
 
     public ParentPage(WebDriver webDriver, String expectedURL) {
         this.webDriver = webDriver;

@@ -7,8 +7,7 @@ import org.junit.Before;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import pages.HomePage;
-import pages.LoginPage;
-import pages.PersonalAccountPage;
+import pages.PersonalAccHomePage;
 
 
 import java.io.File;
@@ -17,9 +16,9 @@ import java.util.concurrent.TimeUnit;
 public class ParentTest {
     WebDriver webDriver;
 
-    protected LoginPage loginPage;
     protected HomePage homePage;
-    protected PersonalAccountPage personalAccountPage;
+    protected PersonalAccHomePage personalAccHomePage;
+
 
     Logger logger = Logger.getLogger(getClass());
 
@@ -31,9 +30,9 @@ public class ParentTest {
         webDriver.manage().window().maximize();
         webDriver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 
-        loginPage = new LoginPage (webDriver);
         homePage = new HomePage(webDriver);
-        personalAccountPage = new PersonalAccountPage(webDriver);
+        personalAccHomePage = new PersonalAccHomePage(webDriver);
+
 
     }
     @After

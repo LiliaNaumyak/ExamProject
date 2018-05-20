@@ -1,24 +1,30 @@
 package loginTest;
 
 import org.junit.Test;
+import org.openqa.selenium.WebDriver;
 import parentTest.ParentTest;
 
+import java.util.concurrent.TimeUnit;
+
 public class LoginTest extends ParentTest {
+    WebDriver webDriver;
+
     @Test
     public void validLogin (){
-        loginPage.openPage();
-        loginPage.enterLogin("element_5@ukr.net");
-        loginPage.enterPass("Q1wertyu");
-        loginPage.clickSubmitButton();
+        homePage.openPage();
+        homePage.enterLogin("element_5@ukr.net");
+        homePage.enterPass("1326547");
+        homePage.clickSubmitButton();
+        webDriver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
 
-        checkAC("Account Page Header is not present", personalAccountPage.isAccountPageHeaderPresent(), true);
+        checkAC("Review button is not present", personalAccHomePage.isReviewButtonPresent(), true);
     }
 
     @Test
     public void invalidLogIn (){
-        loginPage.userLogin ("element_5@ukr.net","11111111");
+        homePage.userLogin ("element_5@ukr.net","11111111");
 
-        checkAC("Account Page Header should not be present",personalAccountPage.isAccountPageHeaderPresent(),false);
+        checkAC("Review button should not be present",personalAccHomePage.isReviewButtonPresent(),false);
     }
 
 }
