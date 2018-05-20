@@ -42,7 +42,7 @@ public class HomePage extends ParentPage {
 
     public void openPage (){
         try {
-            webDriver.get("https://zenmoney.ru/");
+            webDriver.get("https://zenmoney.ru");
             logger.info("Home page was opened");
         }catch (Exception e){
             logger.error("Can not open HomePage");
